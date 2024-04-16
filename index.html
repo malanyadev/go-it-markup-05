@@ -367,52 +367,104 @@
         </div>
       </section>
     </main>
+
+   <!--Modal-->
+
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <h3 class="modal-heading">Leave your contacts and we will call you back</h3>
+        <form name="modal-form">
+          <p class="modal-paragraph">Name</p>
+          <label>
+            <input class="modal-input" type="text" name="username" novalidate required/>
+          </label>
+          <p class="modal-paragraph">Phone</p>
+         <label>
+          <div class="input with-icon">
+            <svg class="icon-modal">
+              <use href="./images/icons.svg#iconVector"></use>
+            </svg>
+          <input class="modal-input" type="tel" name="number" required />
+        </div>
+         </label> 
+         <p class="modal-paragraph">Email</p>
+         <label>
+          <input class="modal-input" type="email" name="email" required />
+         </label>
+         <p class="modal-paragraph">Comment</p>
+         <label>
+          <input class="modal" type="text" name="comment" placeholder="Text input" />
+         </label>
+         <label>
+          <p>I accept the terms and conditions of the <span>Privacy Policy</span></p>
+          <input class="checkbox" type="checkbox" name="checkbox" value=""/>
+         </label>
+        <button class="modal-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <!--Footer-->
+
     <footer class="footer">
       <div class="container footer-background">
         <div class="footer-title">
-        <a class="footer-link" href="./index.html">
-          Web<span class="footer-links-logo">Studio</span>
-        </a>
-        <p class="footer-text">
-          Increase the flow of customers and sales for your business with
-          digital marketing & growth solutions.
-        </p>
+          <a class="footer" href="./index.html">Web<span class="accent-end">Studio</span></a>
+          <p class="footer-title">Increase the flow of customers and sales for your business with digital marketing & growth
+            solutions.
+          </p>
         </div>
-         <!--SVG-->
-      <div class="svg-container">  
-       <p class="svg-text">Social media</p>  
-         <ul class="list-svg-footer">
-          <li class="list-svg-item">
-            <a href="" class="footer-svg-link">
-            <svg class="svg-footer" width="24" height="24">
-              <use href="./images/icons.svg#icon-instagram-2"></use>
-            </svg>
-          </a>
-        </li>
-          <li class="list-svg-item">
-            <a href="" class="footer-svg-link">
-            <svg class="svg-footer" width="24" height="24">
-              <use href="./images/icons.svg#icon-twitter-1"></use>
-            </svg>
-          </a>
-        </li>
-            <li class="list-svg-item">
-              <a href="" class="footer-svg-link">
-              <svg class="svg-footer" width="24" height="24">
-                <use href="./images/icons.svg#icon-facebook-1"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="list-svg-item">
-            <a href="" class="footer-svg-link">
-            <svg class="svg-footer" width="24" height="24">
-              <use href="./images/icons.svg#icon-linkedin-1"></use>
-            </svg>
-          </a>
-        </li>
-       </ul>
+
+        <!--SVG-->
+        <div class="footer-socials">
+          <p class="paragraph-socials">Social media</p>
+          <ul class="footer-list">
+            <li class="footer-icon-item">
+              <a href="" class="footer-icon-link">
+                <svg class="footer-icon-svg" width="24" height="24">
+                  <use href="./images/icons.svg#icon-instagram-2"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-icon-item">
+              <a href="" class="footer-icon-link">
+                <svg class="footer-icon-svg" width="24" height="24">
+                  <use href="./images/icons.svg#icon-twitter-1"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-icon-item">
+              <a href="" class="footer-icon-link">
+                <svg class="footer-icon-svg" width="24" height="24">
+                  <use href="./images/icons.svg#icon-facebook-1"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-icon-item">
+              <a href="" class="footer-icon-link">
+                <svg class="footer-icon-svg" width="24" height="24">
+                  <use href="./images/icons.svg#icon-linkedin-1"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-     </div> 
+
+   <!--Form-Footer-->
+   <div class="form-container">
+    <p class="form-title">Subscribe</p>
+    <form name="footer-form" autocomplete="off">
+      <label>
+        <input class="input-footer" type="email" name="footer-email" placeholder="Email" />
+      </label>
+      <!--Form Button-->
+      <button class="form-btn" type="submit">Subscribe
+      <!--  <svg class="form-svg" width="24" height="24">
+        <use href="./images/icons.svg#icon-send"></use>
+      </svg>--></button>
+    </form>
+   </div>
     </footer>
   </body>
 </html>

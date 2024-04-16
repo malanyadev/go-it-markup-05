@@ -433,24 +433,25 @@ img {
 }
 /* Footer */
 .footer {
-  background: #2e2f42;
+  background-color:#2e2f42;
   padding: 100px 0;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.footer-background{
-  color:#2e2f42;
+.footer-background {
+color:#2e2f42;
   display: flex;
   align-items: baseline;
+
 }
 
-.footer-title{
+.footer-title {
   width: 264px;
   margin-right: 120px
 }
 
-.footer-link {
+.footer-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -462,11 +463,11 @@ img {
   margin-bottom: 16px;
 }
 
-.footer-links-logo {
-  color: #f4f4fd;
+.accent-end {
+color: #f4f4fd;
 }
 
-.footer-text {
+.footer-title {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -474,12 +475,13 @@ img {
   max-width: 264px;
 }
 
-.svg-container{
+.footer-socials {
   position: relative;
-  display: flex;
+  display: block;
+  width: 208px;
 }
 
-.svg-text{
+.paragraph-socials {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -488,12 +490,12 @@ img {
   margin-bottom: 16px;
 }
 
-.list-svg-footer{
+.footer-list {
   display: flex;
   gap: 16px;
 }
 
-.footer-svg-link{
+.footer-icon-link {
   width: 100%;
   height: 100%;
   background-color: #4d5ae5;
@@ -504,20 +506,150 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-svg-link:hover,
-.footer-svg-link:focus{
+.footer-icon-link:hover,
+.footer-icon-link:focus {
   background-color: #31d0aa;
 }
 
-.svg-footer{
+.footer-icon-svg {
   display: flex;
-  width: 24px;
-  height: 24px;
-  fill: #f4f4fd;
+width: 24px;
+height: 24px;
+fill: #f4f4fd;
 }
 
- .list-svg-item{
+.footer-icon-item {
   margin-bottom: 8px;
   height: 40px;
   width: 40px;
+}
+
+/*Form*/
+.form-title{
+font-family: "Roboto" , sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px; 
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: #fff;
+}
+
+.input-footer{
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: #2e2f42;
+  height: 40px;
+  width: 264px;
+}
+
+::placeholder{
+font-family: "Roboto", sans-serif;
+font-weight: 400;
+font-size: 12px;
+line-height: 24px; 
+line-height: 2;
+letter-spacing: 0.04em;
+color: #fff;
+}
+
+.form-btn{
+font-family: "Roboto" , sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+text-align: center;
+color: #fff;
+background-color: #4d5ae5;
+border: none;
+border-radius: 4px;
+padding: 8px 24px;
+width: 165px;
+height: 40px;
+background-image: url(../images/icons.svg#iconicon-send);
+}
+
+
+/*Model*/
+
+.modal-overlay{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-overlay.is-open{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 250ms ease-in-out;
+}
+
+.modal{
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  max-width: 408px;
+  max-height: 584px;
+  overflow-y: auto;
+}
+
+.modal-heading{
+font-family: "Roboto", sans-serif;
+font-weight: 500;
+font-size: 16px; 
+line-height: 1.5;
+letter-spacing: 0.02em;
+text-align:center; 
+color: #2e2f42;
+padding: 80px 36px 25px 36px;
+}
+
+.modal-paragraph{
+font-family: "Roboto" , sans-serif;
+font-weight: 400;
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+color: #8E8F99;
+}
+
+.modal-input{
+  width: 360px;
+  height: 58px;
+  margin: 8px 36px 8px 36px;
+  background-image: url(../images/icons.svg#iconVector);
+}
+
+.input.with-icon {
+  position: relative;
+}
+
+.input.with-icon .icon-modal {
+  position: absolute;
+  left: 10px; /* Зміщення іконки від лівого краю */
+  top: 50%; /* Вертикальне позиціонування по середині */
+  transform: translateY(-50%);
+  width: 24px; /* Розмір іконки */
+  height: 24px;
+  fill: #31d0aa;
+  background-color: #31d0aa; /* Колір іконки */
+}
+
+.input.with-icon .modal-input {
+  padding-left: 40px; /* Зміщення тексту, щоб залишити місце для іконки */
+  width: 200px; /* Змініть ширину поля вводу відповідно до ваших потреб */
+  height: 32px; /* Змініть висоту поля вводу відповідно до ваших потреб */
+  background-color: #f4f4f4; /* Колір фону поля вводу */
+  border: 1px solid #ccc; /* Рамка для поля вводу */
+  border-radius: 4px; /* Закруглені кути */
 }
