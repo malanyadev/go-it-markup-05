@@ -611,8 +611,10 @@ line-height: 1.5;
 letter-spacing: 0.02em;
 text-align:center; 
 color: #2e2f42;
-padding: 80px 36px 25px 36px;
+padding-top: 80px;
+margin-bottom: 25px;
 }
+
 
 .modal-paragraph{
 font-family: "Roboto" , sans-serif;
@@ -623,33 +625,20 @@ letter-spacing: 0.04em;
 color: #8E8F99;
 }
 
+.modal-comment{
+  resize: none ;
+  width: 360px;
+}
+
 .modal-input{
   width: 360px;
-  height: 58px;
-  margin: 8px 36px 8px 36px;
-  background-image: url(../images/icons.svg#iconVector);
+  height: 40px; 
+  margin-bottom: 8px;
 }
 
-.input.with-icon {
-  position: relative;
+input:checked{
+  color: #31d0aa;
 }
 
-.input.with-icon .icon-modal {
-  position: absolute;
-  left: 10px; /* Зміщення іконки від лівого краю */
-  top: 50%; /* Вертикальне позиціонування по середині */
-  transform: translateY(-50%);
-  width: 24px; /* Розмір іконки */
-  height: 24px;
-  fill: #31d0aa;
-  background-color: #31d0aa; /* Колір іконки */
-}
 
-.input.with-icon .modal-input {
-  padding-left: 40px; /* Зміщення тексту, щоб залишити місце для іконки */
-  width: 200px; /* Змініть ширину поля вводу відповідно до ваших потреб */
-  height: 32px; /* Змініть висоту поля вводу відповідно до ваших потреб */
-  background-color: #f4f4f4; /* Колір фону поля вводу */
-  border: 1px solid #ccc; /* Рамка для поля вводу */
-  border-radius: 4px; /* Закруглені кути */
-}
+
