@@ -571,74 +571,247 @@ background-image: url(../images/icons.svg#iconicon-send);
 }
 
 
-/*Model*/
+/*Modal*/
 
-.modal-overlay{
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
+.backdrop {
   width: 100%;
   height: 100%;
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  pointer-events: auto;
+position: fixed;
+top: 0;
+left: 0;
+background: rgba(46, 47, 66, 0.4);
+opacity: 1;
+pointer-events: auto;
+visibility: hidden;
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+/* display: flex;
+justify-content: center;
+align-items: center;
+ */
 }
 
-.modal-overlay.is-open{
+.is-open {
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 250ms ease-in-out;
+  visibility: visible;
 }
 
-.modal{
-  background-color: #fff;
+.modal {
+    position: absolute;
+    width: 408px;
+    min-height: 584px;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 72px 24px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-open-btn {
+  position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #2e2f42;
+}
+
+.modal-open-btn:hover,
+.modal-open-btn:focus {
+  fill: #ffffff;
+  background-color: #404bbf;
+  border: none;
+}
+
+.modal-icon-close {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-align: center;
+    max-width: 360px;
+    margin-bottom: 16px;
+}
+
+.modal-form {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background: #fcfcfc;
   border-radius: 4px;
-  padding: 10px;
-  max-width: 408px;
-  max-height: 584px;
-  overflow-y: auto;
 }
 
-.modal-heading{
-font-family: "Roboto", sans-serif;
-font-weight: 500;
-font-size: 16px; 
-line-height: 1.5;
-letter-spacing: 0.02em;
-text-align:center; 
-color: #2e2f42;
-padding-top: 80px;
-margin-bottom: 25px;
+.modal-field {
+  margin-bottom: 8px;
+  border-color: #4D5AE5;
 }
 
+.modal-input {
+  border: 1px solid #2E2F42;
+    border-radius: 4px;
+      width: 100%;
+      height: 40px;
+      background-color: transparent;
+      padding-left: 38px;
+      outline: transparent;
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(46, 47, 66, 0.4);
+}
 
-.modal-paragraph{
-font-family: "Roboto" , sans-serif;
-font-weight: 400;
+.modal-input:focus {
+  border-color: #4D5AE5;
+}
+
+.modal-input:focus + .modal-field-icon {
+    fill: #4D5AE5;
+}
+
+.modal-label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+.modal-input-wrap {
+  position: relative;
+}
+
+.modal-field-icon {
+  fill: #2e2f42;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-text {
+  border: 1px solid #2E2F42;
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+resize: none;
 font-size: 12px;
 line-height: 1.17;
 letter-spacing: 0.04em;
-color: #8E8F99;
+color: rgba(46, 47, 66, 0.4);
+border: 1px solid rgba(46, 47, 66, 0.4);
+padding: 8px 16px;
 }
 
-.modal-comment{
-  resize: none ;
-  width: 360px;
+.modal-text:focus {
+border-color: #4D5AE5
 }
 
-.modal-input{
-  width: 360px;
-  height: 40px; 
-  margin-bottom: 8px;
+.modal-field-textarea {
+  margin-bottom: 16px;
 }
 
-input:checked{
-  color: #31d0aa;
+/* .modal-text::placeholder {
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+ } */
+
+.modal-end-btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  height: 56px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  margin: 24px 100px 0px 99px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  min-width: 169px;
+  border: none;
+  background-color: #4D5AE5
+}
+
+.modal-end-btn:hover
+.modal-end-btn:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff
+}
+
+.model-field-checkbox {
+margin-bottom: 24px;
+}
+
+.check-text{
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    align-items: center;
+    gap: 8px;
 }
 
 
+/* .modal-accent {
+    line-height: 1.33;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #4d5ae5;
+} */
 
+.check-text span {
+    display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+.modal-check:checked +.check-text span {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+
+.link-policy {
+  color:#4d5ae5;
+}
+
+.modal-check {
+  border-color: #4D5AE5;
+  width: 100%;
+}
